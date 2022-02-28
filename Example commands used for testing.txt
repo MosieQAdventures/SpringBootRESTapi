@@ -1,0 +1,53 @@
+Help below.
+________________________________________
+
+Example commands used for testing:
+
+1) 1 normal task:	(base case / position - [am min max ch])
+amount-150_min-4_max-7_chars-edronetask1
+
+2) 2 tasks:
+amount-4_min-4_max-7_chars-edronetask1_._amount-6_min-4_max-7_chars-edronetask2
+
+3) 5 tasks:
+amount-4_min-4_max-7_chars-edronetask1_._amount-6_min-4_max-7_chars-edronetask2_._amount-8_min-4_max-7_chars-edronetask3_._amount-10_min-4_max-7_chars-edronetask4_._amount-12_min-4_max-7_chars-edronetask5 
+
+4) 16 tasks: (CPU used: 8 cores - 16 threads)
+amount-4_min-4_max-7_chars-edronetask1_._amount-6_min-4_max-7_chars-edronetask2_._amount-8_min-4_max-7_chars-edronetask3_._amount-10_min-4_max-7_chars-edronetask4_._amount-12_min-4_max-7_chars-edronetask5_._amount-14_min-4_max-7_chars-edronetask6_._amount-16_min-4_max-7_chars-edronetask7_._amount-18_min-4_max-7_chars-edronetask8_._amount-20_min-4_max-7_chars-edronetask9_._amount-22_min-4_max-7_chars-edronetask10_._amount-24_min-4_max-7_chars-edronetask11_._amount-26_min-4_max-7_chars-edronetask12_._amount-28_min-4_max-7_chars-edronetask13_._amount-30_min-4_max-7_chars-edronetask14_._amount-32_min-4_max-7_chars-edronetask15_._amount-34_min-4_max-7_chars-edronetask16
+
+5) 1 position_switched task:
+min-4_amount-150_chars-edronetask1_max-7
+
+6) 2 position_switched tasks:
+min-4_amount-150_chars-edronetask1_max-7_._chars-edronetask2_max-7_amount-6_min-4
+
+7) 1 task with min>max:
+amount-150_min-9_max-6_chars-edronetask1
+
+8) 4 tasks with descending amount to create (Mutithreading finish order):
+amount-2500_min-4_max-9_chars-task1_._amount-1000_min-4_max-9_chars-task2_._amount-100_min-4_max-9_chars-task3_._amount-10_min-4_max-9_chars-task4
+
+9) 1 task with multiple occurences of letters:
+amount-120_min-4_max-6_chars-abcaaabcaaabccccbbaaaccacacbbcbacaacc
+
+10) 1 task with negative integer (-33):
+amount--33_min-4_max-7_chars-edronetask1
+
+___________________________________________
+
+? HELP:
+?
+? Command creation is possible by using below format:
+? amount-/int/_min-/int/_max-/int/_chars-/chars/
+? 
+? where:
+? amount - number of strings to be created
+? min - minimal length of the created string
+? max - maximum length of the created string
+? chars - set of character to create strings from
+? /int/ - integer value
+? /chars/ - characters from keyboard
+? 
+? Use '.' (dot) sign with 1 '_' sign on both sides to separate multiple commands: "_._"
+? 
+? Example commands above.
