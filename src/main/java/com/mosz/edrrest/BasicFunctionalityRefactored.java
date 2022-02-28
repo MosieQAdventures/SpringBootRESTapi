@@ -19,7 +19,6 @@ public class BasicFunctionalityRefactored {
 		
 		List<Long> newRndList = getRndValList(0, uniqueStringsCount-1, stringsToCreateCount);
 		
-		//Create Strings
 		String constructEmpty = "";
 		
 		for (int i = minLength; i <= maxLength; i++) {

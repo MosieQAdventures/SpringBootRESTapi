@@ -1,4 +1,11 @@
-Help below.
+Learned basic usage of SpringBoot and MySQL in a week. Mini-App created in around 2 weeks.
+I was using Postman app to send Get/Put/Post/Delete requests, but it works using cmd too.
+App provides 3 necessary endpoints described in 'Task Goal.txt' + some basic crud ones.
+
+Changed command creation to enable request sends (' ' for '_' / '^' for '.').
+Send command using: http://localhost:9000/newjob/{command}
+
+More details below.
 ________________________________________
 
 Example commands used for testing:

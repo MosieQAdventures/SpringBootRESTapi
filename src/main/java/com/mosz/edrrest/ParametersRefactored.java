@@ -19,31 +19,31 @@ public class ParametersRefactored {
 	}
 	
 	public List<String> extractCommandsList(String command, List<String> commandsList) { 		
-		List<Integer> command_separator_indexes = new ArrayList<>();
+		List<Integer> commandSeparatorIndexes = new ArrayList<>();
 		
-		command_separator_indexes = findCommandSeparators(command, command_separator_indexes);
+		commandSeparatorIndexes = findCommandSeparators(command, commandSeparatorIndexes);
 		
-		int command_count = command_separator_indexes.size();
-		if (command_count == 0) {
+		int commandCount = commandSeparatorIndexes.size();
+		if (commandCount == 0) {
 			commandsList.add(command);
 		}
-		else if (command_count>0) {
-			String first_command = command.substring(0, command_separator_indexes.get(0)-1);
-			commandsList.add(first_command);
+		else if (commandCount>0) {
+			String firstCommand = command.substring(0, commandSeparatorIndexes.get(0)-1);
+			commandsList.add(firstCommand);
 		}
 		
 		int i = 0;
-		if (command_count>1) {
-			for (i = 0; i < command_count-1; i++) {
-				String temp_command;
-				temp_command = command.substring(command_separator_indexes.get(i)+2, command_separator_indexes.get(i+1)-1);
+		if (commandCount>1) {
+			for (i = 0; i < commandCount-1; i++) {
+				String tempCommand;
+				tempCommand = command.substring(commandSeparatorIndexes.get(i)+2, commandSeparatorIndexes.get(i+1)-1);
 				
-				commandsList.add(temp_command);
+				commandsList.add(tempCommand);
 			}
 		}
-		if (command_count>0) {
-			String last_command = command.substring(command_separator_indexes.get(i)+2);
-			commandsList.add(last_command);
+		if (commandCount>0) {
+			String lastCommand = command.substring(commandSeparatorIndexes.get(i)+2);
+			commandsList.add(lastCommand);
 		}
 
 		return commandsList;
@@ -105,20 +105,20 @@ public class ParametersRefactored {
         }
 		
 		try {
-			char[] temp_chars = new char[s_chars.length()+1];
+			char[] tempChars = new char[s_chars.length()+1];
 			int index = 0;
 			for (int i = 0; i < s_chars.length(); i++) {
-	            temp_chars[i] = s_chars.charAt(i);
+				tempChars[i] = s_chars.charAt(i);
 	            index++;
 	        }
-			temp_chars[index] = 65535;
-			Arrays.sort(temp_chars);
+			tempChars[index] = 65535;
+			Arrays.sort(tempChars);
 			
 			index = 0;
-			for (int i = 0; i < temp_chars.length-1;   i++) {
-				if (temp_chars[i] == temp_chars[i+1]) {}
+			for (int i = 0; i < tempChars.length-1;   i++) {
+				if (tempChars[i] == tempChars[i+1]) {}
 				else {
-					charList.add(String.valueOf(temp_chars[i]));
+					charList.add(String.valueOf(tempChars[i]));
 					index++;
 				}
 			}
@@ -135,7 +135,7 @@ public class ParametersRefactored {
 			result = 0;
 		}
 		
-		System.out.println(uniqueStringsCount);
+		//System.out.println(uniqueStringsCount);
 		
 		if (stringsToCreateCount > uniqueStringsCount) {
 			System.out.println("ERROR!: Demanded task exceeded the number of unique possibilities.");
